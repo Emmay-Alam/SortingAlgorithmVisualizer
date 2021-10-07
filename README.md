@@ -33,25 +33,25 @@ In addition, this project will include:
 
 ## Implementation Timeline
 
-Friday Afternoon & Weekend:
+**Friday Afternoon & Weekend:**
 - Sorting visualization for Bubble Sort, Merge Sort, and Quick Sort
 - Basic styling for randomly generated data
 - Buttons to allow website functionality
 
-Monday:
+**Monday:**
 - Necessary refactoring for sorting visualizations
 - Instructions for website use
 - Text descriptions for the algorithms
 - More robust styling
 
-Tuesday:
+**Tuesday:**
 - Bonus sorting algorithms (Insertion Sort, Heap Sort)
 - Bonus text descriptions
 
-Wednesday:
+**Wednesday:**
 - Necessary refactoring for bonus algorithms
 - Last-minute styling additions
 
-Thursday Morning:
+**Thursday Morning:**
 - Necessary bugfixes and code refactoring
 - Project hosting
