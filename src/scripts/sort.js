@@ -5,15 +5,23 @@ function generateArray (amount = 25) {
 
   for (let i = 0; i < amount; i++) {
     newArray.push(getRandomInt(5, 100))
-  }
+  };
 
-  const graph = document.querySelector("#graph");
+  return newArray;
+};
 
-  for (let i = 0; i < amount; i++) {
+// rendering newly generated array
+
+function render (array) {
+  const graph = document.querySelector(".graph");
+
+  for (let i = 0; i < array.length; i++) {
     const bar = document.createElement("div");
+    bar.classList.add("bar");
+    bar.innerHTML = `${array[i]}`;
     graph.appendChild(bar);
-  }
-}
+  };
+};
 
 // random number generator between a range (to provide random values for generated data)
 
@@ -25,7 +33,7 @@ function getRandomInt (min, max) {
 
 // creating a button to generate new array of data
 
-const generate = document.querySelector(".generate");
+const generate = document.querySelector("#generate");
 generate.addEventListener("click", function () {
-  generateArray();
+  render(generateArray());
 });
