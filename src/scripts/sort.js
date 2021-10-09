@@ -18,12 +18,19 @@ function render (array) {
   for (let i = 0; i < array.length; i++) {
     const bar = document.createElement("div");
     bar.classList.add("bar");
-    bar.innerHTML = `${array[i]}`;
+    bar.style.height = `${array[i]}px`;
     graph.appendChild(bar);
   };
 };
 
-// random number generator between a range (to provide random values for generated data)
+// delete previously generated / rendered array
+
+function deleteArray () {
+  const graph = document.querySelector(".graph");
+  graph.innerHTML = "";
+}
+
+// random number generator between a range (to provide random values for generated data) - from MDN docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 function getRandomInt (min, max) {
   min = Math.ceil(min);

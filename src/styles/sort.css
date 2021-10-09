@@ -1,4 +1,11 @@
+.graph {
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .bar {
-  width: 2px;
-  background-color: red;
+  display: flex;
+  justify-content: center;
+  background-color: cyan;
 }
