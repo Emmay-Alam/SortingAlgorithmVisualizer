@@ -1,11 +1,12 @@
 .graph {
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .bar {
-  display: flex;
   justify-content: center;
-  background-color: cyan;
+  background: cyan;
+  width: 12.5px;
+  margin: 2.5px;
 }
