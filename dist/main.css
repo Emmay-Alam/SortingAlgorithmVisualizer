@@ -53,15 +53,18 @@ table {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/sort.css ***!
   \***************************************************************************************************/
 .graph {
-  margin-top: 10%;
+  height: 300px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .bar {
-  display: flex;
-  justify-content: center;
-  background-color: cyan;
+  background: cyan;
+  border: solid 0.5px black;
+  width: 25px;
+  margin: 2.5px;
+  transition: 0.2s all;
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
