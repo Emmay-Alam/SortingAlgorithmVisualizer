@@ -22,6 +22,8 @@ async function bubble() {
   };
 
   bar[0].style.background = "lightgreen";                     // ensuring remaining bar after sorting is colored
+
+  bar.forEach(el => el.style.background = "green");           // graph will be fully colored only when fully sorted
 };
 
 function swap (bar1, bar2) {
