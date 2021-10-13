@@ -69,7 +69,7 @@ async function merge (bars, left, right) {               // merge sort function 
 };
 
 const mergeSortbutton = document.querySelector("#merge");
-mergeSortbutton.addEventListener("click", async function() {
+mergeSortbutton.addEventListener("click", async function () {
   updateDesc("merge");
   const bars = document.querySelectorAll('.bar');
   disableButtons();
