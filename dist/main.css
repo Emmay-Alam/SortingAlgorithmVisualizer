@@ -1,3 +1,6 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
+  \****************************************************************************************************/
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -46,6 +49,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*!***************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/sort.css ***!
+  \***************************************************************************************************/
 body {
   display: flex;
   flex-direction: column;
@@ -95,6 +101,107 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 28px;
   text-shadow: 0px 1px 1px;
+}
+
+.modal-background {
+  /* display: none; */
+  opacity: 80%;
+  background-color: #343434;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.about {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50%;
+  height: 40%;
+  z-index: 1;
+  overflow: auto;
+  background-color: #E2F0CB;
+  border: solid 3px #343434;
+  border-radius: 10px;
+  padding: 1%;
+  line-height: 1.15;
+}
+
+.about-header {
+  width: 100%;
+}
+
+#about-title {
+  font-weight: 550;
+  text-align: center;
+  margin-bottom: 2.5%;
+}
+
+.about > p {
+  margin-bottom: 2.5%;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 40%;
+  height: 25%;
+  z-index: 1;
+  overflow: auto;
+  background-color: #E2F0CB;
+  border: solid 3px #343434;
+  border-radius: 10px;
+  padding: 1%;
+  line-height: 1.15;
+}
+
+.instructions-header {
+  width: 100%;
+}
+
+#instructions-title {
+  font-weight: 550;
+  text-align: center;
+  margin-bottom: 2.5%;
+}
+
+.instructions > ul {
+  width: 80%;
+  list-style-type: disc;
+}
+
+.instructions ul li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.close {
+  color: #343434;
+  float: left;
+  font-size: 32px;
+  font-weight: bold;
+  /* padding: 0.5%; */
+  left: 100%;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .graph {
@@ -196,6 +303,7 @@ footer {
   bottom: 0;
   padding: 10px 10px;
 }
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 
-
-/*# sourceMappingURL=main.css.map*/

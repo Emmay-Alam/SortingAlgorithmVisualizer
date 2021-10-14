@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   bubbleSortButton.addEventListener("click", async function () {
     sortFunc.updateDesc("bubble");                                         // updating text description for bubble sort
-    const bars = document.querySelectorAll(".bar");                       // using querySelectorAll to grab all of the bars in a NodeList
+    const bars = document.querySelectorAll(".bar");                        // using querySelectorAll to grab all of the bars in a NodeList
     sortFunc.disableButtons();
     await bubble(sortFunc, bars);
     sortFunc.sorted(bars);                                                 // changing final color of array to green

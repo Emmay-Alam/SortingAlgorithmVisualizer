@@ -9,6 +9,7 @@
   <script src="./dist/main.js"></script>
 </head>
 <body>
+  <div class="modal-background"></div>
   <header class="header">
     <h1 class="header-title">Sorting Algorithm Visualizer (SAV)</h1>
     <ul class="header-info">
@@ -17,7 +18,31 @@
     </ul>
   </header>
 
-  <main>
+  <main class="main-content">
+    <div class="about">
+      <div class="about-header">
+        <span class="close">&times;</span>
+        <p id="about-title">SAV Web App</p>
+      </div>
+      <p>For anyone interested in programming, it's almost a given that they will encounter sorting algorithms. When learning about these various sorting algorithms, it can be difficult to see and understand the difference between all of them.</p>
+
+      <p>This web app serves to provide users a brief overview of the difference in approach and performance across different sorting algorithms.</p>
+
+      <p>NOTE: By no means are the algorithms in this web app exhaustive! There are many sorting algorithms out there, but generally many of them fall under the same time complexity (i.e. they will take comparatively the same amount of time when considering asymptotic analysis).</p>
+    </div>
+
+    <div class="instructions">
+      <div class="instructions-header">
+        <span class="close">&times;</span>
+        <p id="instructions-title">Instructions</p>
+      </div>
+      <ul>
+        <li><p>Generate unsorted data using the "Generate New Data" button.</p></li>
+        <li><p>Adjust the array size using the slider.</p></li>
+        <li><p>Click on the desired sorting algorithm you'd like to visualize.</p></li>
+      </ul>
+    </div>
+
     <div class="graph"></div>
     <div class="row">
       <div class="settings">
@@ -36,6 +61,7 @@
       </div>
     </div>
   </main>
+
   <footer>
     <ul>
       <li><a href="https://github.com/Emmay-Alam/SortingAlgorithmVisualizer"><img src="./src/assets/github_mark.png"></a></li>
