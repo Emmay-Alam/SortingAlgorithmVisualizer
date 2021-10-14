@@ -50,7 +50,7 @@ body {
 }
 
 .modal-background {
-  /* display: none; */
+  display: none;
   opacity: 80%;
   background-color: #343434;
   position: fixed;
@@ -94,7 +94,7 @@ body {
 }
 
 .instructions {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   position: fixed;

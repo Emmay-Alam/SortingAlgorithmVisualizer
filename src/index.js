@@ -6,6 +6,36 @@ import quick from "./scripts/algorithms/quick.js"
 const sortFunc = new SortFunctions();
 
 document.addEventListener("DOMContentLoaded", () => {
+  // modal variables
+
+  const about = document.querySelector(".about");
+  const aboutButton = document.querySelector("#about-modal");
+  const instructions = document.querySelector(".instructions");
+  const instructionsButton = document.querySelector("#instructions-modal");
+
+  const modalBackground = document.querySelector(".modal-background");
+  const close = document.querySelector(".close");
+
+  // modal functionality
+
+  aboutButton.addEventListener("click", function () {
+    about.style.display = "flex";
+    modalBackground.style.display = "flex";
+  });
+
+  instructionsButton.addEventListener("click", function () {
+    instructions.style.display = "flex";
+    modalBackground.style.display = "flex";
+  });
+
+  document.addEventListener("click", function (event) {
+    if (event.target.className === "close") {
+      if (about.style.display === "flex") about.style.display = "none";
+      if (instructions.style.display === "flex") instructions.style.display = "none";
+      if (modalBackground.style.display === "flex") modalBackground.style.display = "none";
+    }
+  });
+
   // adding eventListener on button to generate new array of data //
 
   const generate = document.querySelector("#generate");
