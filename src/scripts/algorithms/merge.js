@@ -6,16 +6,16 @@ async function mergeHelper (bars, min, max, middle) {
   let right = new Array(rightHalf);                       // creating new array to contain the split up right half
 
   for (let i = 0; i < leftHalf; i++) {                    // iterating through left half and giving it a color
-    await delay(250);
+    await delay(250);                                     // hard coding a value of 250ms for the delay between comparisons
 
-    bars[min + i].style.background = "plum";
+    bars[min + i].style.background = "#B1A2CA";
     left[i] = bars[min + i].style.height;                 // storing each height of the bars into left half
   };
 
   for (let i = 0; i < rightHalf; i++) {                   // iterating through right half and giving it a DIFFERENT color
     await delay(250);
 
-    bars[middle + 1 + i].style.background = 'yellow';
+    bars[middle + 1 + i].style.background = '#E9EC6B';
     right[i] = bars[middle + 1 + i].style.height;         // storing each height of the bars into right half
   };
 
@@ -28,12 +28,12 @@ async function mergeHelper (bars, min, max, middle) {
 
     if (parseInt(left[i]) <= parseInt(right[j])) {       // comparing heights between each bar in the respective arrays
       bars[k].style.height = left[i];                    // left side merge
-      bars[k].style.background = 'lightgreen';
+      bars[k].style.background = '#77DD77';
       i++;
       k++;
     } else {
       bars[k].style.height = right[j];                   // right side merge
-      bars[k].style.background = 'lightgreen';
+      bars[k].style.background = '#77DD77';
       j++;
       k++;
     };
@@ -41,7 +41,7 @@ async function mergeHelper (bars, min, max, middle) {
 
   while (i < leftHalf) {                                // in case either array runs out, iterate through a singluar half to "merge" the bars to the main array
     await delay(250);
-    bars[k].style.background = 'lightgreen';
+    bars[k].style.background = '#77DD77';
     bars[k].style.height = left[i];                     // left side merge
     i++;
     k++;
@@ -49,7 +49,7 @@ async function mergeHelper (bars, min, max, middle) {
 
   while (j < rightHalf) {                                // in case either array runs out, iterate through a singluar half to "merge" the bars to the main array
     await delay(250);
-    bars[k].style.background = 'lightgreen';
+    bars[k].style.background = '#77DD77';
     bars[k].style.height = right[j];                     // right side merge
     j++;
     k++;
