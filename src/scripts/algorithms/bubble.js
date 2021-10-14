@@ -1,4 +1,4 @@
-async function bubble (bars) {
+export default async function bubble (sortFunc, bars) {
   for (let i = 0; i < bars.length - 1; i++) {              // iterating through the length of the NodeList
     for (let j = 0; j < (bars.length - i - 1); j++) {      // iterating through the length of the NodeList MINUS the sorted bars
       bars[j].style.background = "#FF6D6A";                   // setting the two bars being compared to a different color
@@ -8,7 +8,7 @@ async function bubble (bars) {
       let bar2 = parseInt(bars[j + 1].style.height);
 
       if(bar1 > bar2) {
-        await delay(500);                                 // hard coding a value of 250ms for the delay between comparisons
+        await sortFunc.delay(500);                                 // hard coding a value of 250ms for the delay between comparisons
         swap(bars[j], bars[j + 1]);
       };
 
@@ -26,14 +26,4 @@ function swap (bar1, bar2) {                                   // basic swap fun
   let tempHeight = bar1.style.height;
   bar1.style.height = bar2.style.height;
   bar2.style.height = tempHeight;
-}
-
-const bubbleSortButton = document.querySelector("#bubble");
-bubbleSortButton.addEventListener("click", async function () {
-  updateDesc("bubble");                                         // updating text description for bubble sort
-  const bars = document.querySelectorAll(".bar");               // using querySelectorAll to grab all of the bars in a NodeList
-  disableButtons();
-  await bubble(bars);
-  sorted(bars);                                                 // changing final color of array to green
-  enableButtons();
-});
+};

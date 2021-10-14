@@ -1,4 +1,4 @@
-async function partition (bars, left, right) {            // this particular implementation of partition is the Lomuto partition, using the last element as the pivot
+async function partition (sortFunc, bars, left, right) {            // this particular implementation of partition is the Lomuto partition, using the last element as the pivot
   bars[right].style.background = "#E9EC6B";               // pivot bar
 
   let i = left - 1;                                       // index of smallest bar
@@ -6,7 +6,7 @@ async function partition (bars, left, right) {            // this particular imp
   for (let j = left; j <= right - 1; j++) {
     bars[j].style.background = "#EFBE7D";                 // currently selected bar to compare to pivot
 
-    await delay(250);                                     // hard coding a value of 100ms for the delay between comparisons
+    await sortFunc.delay(250);                                     // hard coding a value of 100ms for the delay between comparisons
 
     if (parseInt(bars[j].style.height) <= parseInt(bars[right].style.height)) {   // checking for elements less or equal to the pivot
       i++;                                                // increment to the next bar
@@ -15,21 +15,21 @@ async function partition (bars, left, right) {            // this particular imp
       bars[i].style.background = "#FF6D6A";               // color of the bars LESS than the pivot bar after swap
 
       if (i !== j) bars[j].style.background = "#B1A2CA";  // color of the bars MORE than the pivot bar after swap
-      await delay(250);
+      await sortFunc.delay(250);
     } else {
       bars[j].style.background = "#B1A2CA";               // color of the bars MORE than the pivot with no swap
     }
   }
 
   i++;
-  await delay(250);
+  await sortFunc.delay(250);
 
   swap(bars[i], bars[right]);
 
   bars[right].style.background = "#B1A2CA";               // ensuring bars MORE than the pivot are the same color
   bars[i].style.background = "lightgreen";                // coloring sorted pivot
 
-  await delay(250);
+  await sortFunc.delay(250);
 
   for (let k = 0; k < bars.length; k++) {
     if (bars[k].style.background !== "lightgreen")        //checking for sorted pivot color and then resetting the colors of all the other bars
@@ -39,11 +39,11 @@ async function partition (bars, left, right) {            // this particular imp
   return i;                                             // returning pivot index
 }
 
-async function quick (bars, left, right) {              // quick sort function to recursively call on main array
+export default async function quick (sortFunc, bars, left, right) {              // quick sort function to recursively call on main array
   if (left < right) {
-    let pivot = await partition(bars, left, right);     // retrieving pivot index from partition helper function
-    await quick(bars, left, pivot - 1);                 // recursive call on left half
-    await quick(bars, pivot + 1, right);                // recursive call on right half
+    let pivot = await partition(sortFunc, bars, left, right);     // retrieving pivot index from partition helper function
+    await quick(sortFunc, bars, left, pivot - 1);                 // recursive call on left half
+    await quick(sortFunc, bars, pivot + 1, right);                // recursive call on right half
   }
 }
 
@@ -52,13 +52,3 @@ function swap (bar1, bar2) {                            // basic swap function t
   bar1.style.height = bar2.style.height;
   bar2.style.height = tempHeight;
 };
-
-const quickSortbtn = document.querySelector("#quick");
-quickSortbtn.addEventListener("click", async function () {
-  updateDesc("quick");
-  const bars = document.querySelectorAll(".bar");
-  disableButtons();
-  await quick(bars, 0, bars.length - 1);
-  sorted(bars);
-  enableButtons();
-});
