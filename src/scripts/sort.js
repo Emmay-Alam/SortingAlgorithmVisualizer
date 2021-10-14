@@ -88,7 +88,7 @@ function disableButtons () {
   document.querySelector("#bubble").disabled = true;
   document.querySelector("#merge").disabled = true;
   document.querySelector("#quick").disabled = true;
-}
+};
 
 // button enable function (meant for after sorting is complete) //
 
@@ -96,4 +96,4 @@ function enableButtons () {
   document.querySelector("#bubble").disabled = false;
   document.querySelector("#merge").disabled = false;
   document.querySelector("#quick").disabled = false;
-}
+};

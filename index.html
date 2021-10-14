@@ -9,15 +9,37 @@
   <script src="./dist/main.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Sorting Algorithm Visualizer</h1>
+  <header class="header">
+    <h1 class="header-title">Sorting Algorithm Visualizer (SAV)</h1>
+    <ul class="header-info">
+      <li><button id="about-modal">About</button></li>
+      <li><button id="instructions-modal">Instructions</button></li>
+    </ul>
   </header>
 
   <main>
     <div class="graph"></div>
-    <button id="generate">Generate New Data</button>
-    Array Size: <input id="size" type="range" min=10 max=50 value=30>
-    <button id="bubble">Bubble Sort</button>
+    <div class="row">
+      <div class="settings">
+        <button id="generate">Generate New Data</button>
+        <button id="bubble">Bubble Sort</button>
+        <button id="merge">Merge Sort</button>
+        <button id="quick">Quick Sort</button>
+        <div id="arrsize">
+          <p>Array Size</p>
+          <input id="size" type="range" min=10 max=50 value=30>
+        </div>
+      </div>
+      <div class="descriptions">
+        <h2 class="description-title"></h2>
+        <p class="description"></p>
+      </div>
+    </div>
   </main>
+  <footer>
+    <ul>
+      <li><a href="https://github.com/Emmay-Alam/SortingAlgorithmVisualizer"><img src="./src/assets/github_mark.png"></a></li>
+    </ul>
+  </footer>
 </body>
 </html>
