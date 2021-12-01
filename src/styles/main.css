@@ -255,13 +255,21 @@ body {
 
 footer {
   display: flex;
-  position: relative;
-  align-self: center;
+  justify-content: center;
+  align-items: center;
   bottom: 0;
   padding: 10px 10px;
 }
 
+footer > ul {
+  display: flex;
+}
+
+footer > ul > li {
+  padding: 0 5px;
+}
+
 img {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
 }
