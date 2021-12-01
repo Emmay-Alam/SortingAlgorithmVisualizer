@@ -327,11 +327,14 @@ img {
   filter: invert(17%) sepia(0%) saturate(32%) hue-rotate(146deg) brightness(100%) contrast(91%);
   width: 36px;
   height: 36px;
-  transition: 0.2s all ease-in;
 }
 
 img:hover {
   filter: none;
+}
+
+img:active {
+  transform: translateY(4px);
 }
 
 /*!*************************************************************************************************************************************!*\
