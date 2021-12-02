@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   bubbleSortButton.addEventListener("click", async function () {
     sortFunc.updateDesc("bubble");                                         // updating text description for bubble sort
     const bars = document.querySelectorAll(".bar");                        // using querySelectorAll to grab all of the bars in a NodeList
+    if (bars.length === 0) return null;
     sortFunc.disableButtons();
     await bubble(sortFunc, bars);
     sortFunc.sorted(bars);                                                 // changing final color of array to green
@@ -70,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mergeSortbutton.addEventListener("click", async function () {
     sortFunc.updateDesc("merge");
     const bars = document.querySelectorAll('.bar');
+    if (bars.length === 0) return null;
     sortFunc.disableButtons();
     await merge(sortFunc, bars, 0, bars.length - 1);
     sortFunc.sorted(bars);
@@ -81,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   quickSortbutton.addEventListener("click", async function () {
     sortFunc.updateDesc("quick");
     const bars = document.querySelectorAll(".bar");
+    if (bars.length === 0) return null;
     sortFunc.disableButtons();
     await quick(sortFunc, bars, 0, bars.length - 1);
     sortFunc.sorted(bars);
