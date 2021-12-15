@@ -1,57 +1,42 @@
 # SAV - Sorting Algorithm Visualizer
 
-SAV is a web app dedicated to helping users visualize popular sorting algorithms.
+SAV is an interactive web app dedicated to helping users visualize popular sorting algorithms (currently bubble sort, merge sort, quick sort). This web app serves to provide users a brief overview of the difference in approach and performance across different sorting algorithms.
 
-## Background
+## Technologies Used
 
-For anyone interested in programming, it's almost a given that they will encounter sorting algorithms. When learning about these various sorting algorithms, it can be difficult to see and understand the difference between all of them.
+SAV was implemented using purely vanilla Javascript, HTML5, and CSS3.
+## Key Features
 
-This web app serves to provide users a brief overview of the difference in approach and performance across different sorting algorithms.
+### Random Data Generation
 
-NOTE: By no means are the algorithms in this web app exhaustive! There are many sorting algorithms out there, but generally many of them fall under the same time complexity (i.e. they will take comparatively the same amount of time when considering asymptotic analysis).
+Interactive graph that can render completely random data whenever the user chooses to do so. The amount of data can also be adjusted using a slider to either scale up or down the amount of bars rendered.
 
-## Functionality & MVPs
+<div align="center">
+  <img src="src/assets/render.gif" />
+</div>
 
-Using SAV, users will be able to:
-  1) Choose from a selection of sorting algorithms to visualize
-  2) Generate a new set of data to be sorted
-  3) Adjust the amount of data being sorted
-  4) Read text descriptions of the algorithms side-by-side with the visualization
+```js
+  generateArray (amount) {
+    this.deleteArray();
+    const newArray = [];
 
-In addition, this project will include:
-  1) General instructions for use of the web app
-  2) A production README
+    for (let i = 0; i < amount; i++) {
+      newArray.push(this.getRandomInt(5, 100))
+    };
 
-## Wireframe
+    return newArray;
+  };
 
-![wireframe](wireframe_v1.png)
+  render (array) {
+    const graph = document.querySelector(".graph");
 
-## Technologies and APIs
+    for (let i = 0; i < array.length; i++) {
+      const bar = document.createElement("div");
 
-- Vanilla JS for all sorting algorithm scripts
-- CSS to help visualize real-time sorting of data
+      bar.classList.add("bar");
+      bar.style.height = `${array[i] * Math.PI}px`;
 
-## Implementation Timeline
-
-**Friday Afternoon & Weekend:**
-- Sorting visualization for Bubble Sort, Merge Sort, and Quick Sort
-- Basic styling for randomly generated data
-- Buttons to allow website functionality
-
-**Monday:**
-- Necessary refactoring for sorting visualizations
-- Instructions for website use
-- Text descriptions for the algorithms
-- More robust styling
-
-**Tuesday:**
-- Bonus sorting algorithms (Insertion Sort, Heap Sort)
-- Bonus text descriptions
-
-**Wednesday:**
-- Necessary refactoring for bonus algorithms
-- Last-minute styling additions
-
-**Thursday Morning:**
-- Necessary bugfixes and code refactoring
-- Project hosting
+      graph.appendChild(bar);
+    };
+  };
+```
