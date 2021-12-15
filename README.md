@@ -2,6 +2,12 @@
 
 SAV is an interactive web app dedicated to helping users visualize popular sorting algorithms (currently bubble sort, merge sort, quick sort). This web app serves to provide users a brief overview of the difference in approach and performance across different sorting algorithms.
 
+<br>
+<div align="center">
+  <p>GIF example of interactive graph</p>
+  <img src="src/assets/demo.gif" />
+</div>
+
 ## Technologies Used
 
 SAV was implemented using purely vanilla Javascript, HTML5, and CSS3.
