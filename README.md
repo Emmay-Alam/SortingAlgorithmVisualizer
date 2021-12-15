@@ -4,7 +4,6 @@ SAV is an interactive web app dedicated to helping users visualize popular sorti
 
 <br>
 <div align="center">
-  <p>GIF example of interactive graph</p>
   <img src="src/assets/demo.gif" />
 </div>
 
