@@ -8,7 +8,7 @@ export default async function bubble (sortFunc, bars) {
       let bar2 = parseInt(bars[j + 1].style.height);
 
       if(bar1 > bar2) {
-        await sortFunc.delay(500);                                 // hard coding a value of 250ms for the delay between comparisons
+        await sortFunc.delay(250);                                 // hard coding a value of 250ms for the delay between comparisons
         swap(bars[j], bars[j + 1]);
       };
 

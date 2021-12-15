@@ -6,7 +6,7 @@ async function partition (sortFunc, bars, left, right) {            // this part
   for (let j = left; j <= right - 1; j++) {
     bars[j].style.background = "#EFBE7D";                 // currently selected bar to compare to pivot
 
-    await sortFunc.delay(250);                                     // hard coding a value of 100ms for the delay between comparisons
+    await sortFunc.delay(250);                                     // hard coding a value of 250ms for the delay between comparisons
 
     if (parseInt(bars[j].style.height) <= parseInt(bars[right].style.height)) {   // checking for elements less or equal to the pivot
       i++;                                                // increment to the next bar
